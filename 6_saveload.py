@@ -36,7 +36,7 @@ layers.Dense(64, activation='sigmoid', input_shape=(1,)),
 # Add another:
 layers.Dense(64, activation='sigmoid'),
 # Add a softmax layer with 10 output units:
-layers.Dense(10, activation='tanh')])
+layers.Dense(1, activation='tanh')])
 
 # model.compile(optimizer=tf.train.AdamOptimizer(0.001),
 # 	loss='categorical_crossentropy',
@@ -52,19 +52,31 @@ model.compile(optimizer=tf.train.AdamOptimizer(0.01),
 	# loss=tf.keras.losses.categorical_crossentropy,
 	# metrics=[tf.keras.metrics.categorical_accuracy])
 
+callbacks = [
+  # Interrupt training if `val_loss` stops improving for over 2 epochs
+  tf.keras.callbacks.EarlyStopping(patience=2, monitor='val_loss'),
+  # Write TensorBoard logs to `./logs` directory
+  tf.keras.callbacks.TensorBoard(log_dir='./logs')
+]
+
 model.fit(data, labels, epochs=200, batch_size=1, validation_data=(val_data, val_labels)) 
 
 model.evaluate(data, labels, batch_size=1)
 
 result = model.predict(data, batch_size=32)
 
-k=result[:,0:1:1]
-
-print(k.T) #[start:stop:step]
+print(result.T) #[start:stop:step]
 print((labels[:]))
 
 a=np.array([1])
 
 print(model.predict(a,batch_size=1)) #Predict output of Sin(1)
+
+# Save weights to a TensorFlow Checkpoint file
+model.save_weights('./weights/my_model')
+
+# Restore the model's state,
+# this requires a model with the same architecture.
+# model.load_weights('./weights/my_model')
 
 # model.evaluate(dataset, steps=30)

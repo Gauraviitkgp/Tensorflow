@@ -64,3 +64,45 @@ For small datasets, use in-memory NumPy arrays to train and evaluate a model. Th
 * __batch size__: batch size = the number of training examples in one forward/backward pass. The higher the batch size, the more memory space you'll need. When passed NumPy data, the model slices the data into smaller batches and iterates over these batches during training. This integer specifies the size of each batch. Be aware that the last batch may be smaller if the total number of samples is not divisible by the batch size.
 
 * __validation_data__: When prototyping a model, you want to easily monitor its performance on some validation data. Passing this argument—a tuple of inputs and labels—allows the model to display the loss and metrics in inference mode for the passed data, at the end of each epoch.
+
+
+#### [If needed tf data](https://www.tensorflow.org/guide/keras#input_tfdata_datasets)
+
+### Evaluation and Prediciton
+
+The [tf.keras.Model.evaluate](https://www.tensorflow.org/api_docs/python/tf/keras/models/Model#evaluate) and tf.keras.Model.predict methods can use NumPy data and a tf.data.Dataset.
+
+
+## Building Advanced Models
+
+Building a model with the functional API works like this:
+
+1) A layer instance is callable and returns a tensor.
+2) Input tensors and output tensors are used to define a tf.keras.Model instance.
+3) This model is trained just like the Sequential model.
+
+### Model Subclassing
+Model subclassing
+Build a fully-customizable model by subclassing [tf.keras.Model](https://www.tensorflow.org/api_docs/python/tf/keras/models/Model) and defining your own forward pass. Create layers in the __init__ method and set them as attributes of the class instance. Define the forward pass in the call method.
+
+Model subclassing is particularly useful when eager execution is enabled since the forward pass can be written imperatively.
+
+### Adding Custom Layers
+Custom layers
+Create a custom layer by subclassing [tf.keras.layers.Layer](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Layer) and implementing the following methods:
+
+* __build__: Create the weights of the layer. Add weights with the add_weight method.
+* __call__: Define the forward pass.
+* __compute_output_shape__: Specify how to compute the output shape of the layer given the input shape.
+Optionally, a layer can be serialized by implementing the get_config method and the from_config class method.
+
+## Callbacks
+A callback is an object passed to a model to customize and extend its behavior during training. You can write your own custom callback, or use the built-in tf.keras.callbacks that include:
+
+* __tf.keras.callbacks.ModelCheckpoint__: Save checkpoints of your model at regular intervals.
+* __tf.keras.callbacks.LearningRateScheduler__: Dynamically change the learning rate.
+* __tf.keras.callbacks.EarlyStopping__: Interrupt training when validation performance has stopped improving.
+* __tf.keras.callbacks.TensorBoard__: Monitor the model's behavior using TensorBoard.
+
+## Saving And Restoring
+Save and load the weights of a model using [tf.keras.Model.save_weights](https://www.tensorflow.org/api_docs/python/tf/keras/models/Model#save_weights)
