@@ -105,4 +105,33 @@ A callback is an object passed to a model to customize and extend its behavior d
 * __tf.keras.callbacks.TensorBoard__: Monitor the model's behavior using TensorBoard.
 
 ## Saving And Restoring
+### Saving Weights
 Save and load the weights of a model using [tf.keras.Model.save_weights](https://www.tensorflow.org/api_docs/python/tf/keras/models/Model#save_weights)
+
+By default, this saves the model's weights in the TensorFlow checkpoint file format. Weights can also be saved to the Keras HDF5 format (the default for the multi-backend implementation of Keras):
+
+### Saving Configuration
+A model's configuration can be saved—this serializes the model architecture without any weights. A saved configuration can recreate and initialize the same model, even without the code that defined the original model. Keras supports JSON and YAML serialization formats.
+
+To load from a Json file:
+```
+	import json
+	import pprint
+	pprint.pprint(json.loads(json_string))
+	fresh_model = tf.keras.models.model_from_json(json_string)
+```
+
+For YAML file:
+```
+	pip install PyYAML
+	fresh_model = tf.keras.models.model_from_yaml(yaml_string)
+```
+
+_Caution_: Subclassed models are not serializable because their architecture is defined by the Python code in the body of the call method.
+
+### Entire model
+
+Entire model
+The entire model can be saved to a file that contains the weight values, the model's configuration, and even the optimizer's configuration. This allows you to checkpoint a model and resume training later—from the exact same state—without access to the original code.
+
+

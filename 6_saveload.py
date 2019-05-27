@@ -72,6 +72,12 @@ a=np.array([1])
 
 print(model.predict(a,batch_size=1)) #Predict output of Sin(1)
 
+# model.evaluate(dataset, steps=30)
+
+# =========================SAVING WEIGHTS===================
+
+# -------------------default checkpoint format-----------------------------
+
 # Save weights to a TensorFlow Checkpoint file
 model.save_weights('./weights/my_model')
 
@@ -79,4 +85,26 @@ model.save_weights('./weights/my_model')
 # this requires a model with the same architecture.
 # model.load_weights('./weights/my_model')
 
-# model.evaluate(dataset, steps=30)
+# --------------------HDF5 format---------------------------------
+# Save weights to a HDF5 file
+model.save_weights('my_model.h5', save_format='h5')
+
+# Restore the model's state
+model.load_weights('my_model.h5')
+
+
+# ======================SAVING MODEL ARCHITECTURE=============
+# Serialize a model to JSON format
+json_string = model.to_json()
+json_string
+
+# Via YAML formta
+yaml_string = model.to_yaml()
+print(yaml_string)
+
+# ========================SAVING ENTIRE THING======================
+# Save entire model to a HDF5 file
+model.save('my_model.h5')
+
+# Recreate the exact same model, including weights and optimizer.
+model = tf.keras.models.load_model('my_model.h5')
