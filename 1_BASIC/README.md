@@ -134,4 +134,28 @@ _Caution_: Subclassed models are not serializable because their architecture is 
 Entire model
 The entire model can be saved to a file that contains the weight values, the model's configuration, and even the optimizer's configuration. This allows you to checkpoint a model and resume training later—from the exact same state—without access to the original code.
 
+## Eager Execution
+[Eager execution](https://www.tensorflow.org/guide/eager) is an imperative programming environment that evaluates operations immediately. This is not required for Keras, but is supported by [tf.keras](https://www.tensorflow.org/api_docs/python/tf/keras) and useful for inspecting your program and debugging.
 
+All of the tf.keras model-building APIs are compatible with eager execution. And while the Sequential and functional APIs can be used, eager execution especially benefits model subclassing and building custom layers—the APIs that require you to write the forward pass as code (instead of the APIs that create models by assembling existing layers).
+
+See the eager execution guide for examples of using Keras models with custom training loops and [tf.GradientTape](https://www.tensorflow.org/api_docs/python/tf/GradientTape).
+
+## Distribution
+### [Estimators](https://www.tensorflow.org/guide/keras#distribution) 
+The Estimators API is used for training models for distributed environments. This targets industry use cases such as distributed training on large datasets that can export a model for production.
+
+A tf.keras.Model can be trained with the tf.estimator API by converting the model to an tf.estimator.Estimator object with tf.keras.estimator.model_to_estimator. [Custom Estimators](https://www.tensorflow.org/guide/estimators#creating_estimators_from_keras_models)
+
+### Multiple GPU's
+tf.keras models can run on multiple GPUs using [tf.contrib.distribute.DistributionStrategy](https://www.tensorflow.org/api_docs/python/tf/distribute/Strategy). This API provides distributed training on multiple GPUs with almost no changes to existing code.
+
+Currently, [tf.contrib.distribute.MirroredStrategy](https://www.tensorflow.org/api_docs/python/tf/contrib/distribute/MirroredStrategy) is the only supported distribution strategy. MirroredStrategy does in-graph replication with synchronous training using all-reduce on a single machine. To use DistributionStrategy with Keras, convert the tf.keras.Model to a tf.estimator.Estimator with tf.keras.estimator.model_to_estimator, then train the estimator
+
+1) Define an input pipeline. The input_fn returns a [tf.data.Dataset](https://www.tensorflow.org/api_docs/python/tf/data/Dataset) object used to distribute the data across multiple devices—with each device processing a slice of the input batch.
+
+2) Next, create a [tf.estimator.RunConfig](https://www.tensorflow.org/api_docs/python/tf/estimator/RunConfig) and set the train_distribute argument to the [tf.contrib.distribute.MirroredStrategy](https://www.tensorflow.org/api_docs/python/tf/contrib/distribute/MirroredStrategy) instance. When creating MirroredStrategy, you can specify a list of devices or set the num_gpus argument. The default uses all available GPUs
+
+3) Convert the Keras model to a tf.estimator.Estimator instance
+
+4) Finally, train the Estimator instance by providing the input_fn and steps arguments
