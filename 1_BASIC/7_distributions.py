@@ -37,4 +37,4 @@ keras_estimator = tf.keras.estimator.model_to_estimator(
 	config=config,
 	model_dir='/tmp/model_dir')
 
-keras_estimator.train(input_fn=input_fn, steps=10)
+keras_estimator.train(input_fn=input_fn, steps=10)	
