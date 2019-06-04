@@ -169,3 +169,24 @@ tf.slice(
 )
 ```
 This operation extracts a slice of size _size_ from a tensor input starting at the location specified by _begin_. The slice size is represented as a tensor shape, where size[i] is the number of elements of the 'i'th dimension of input that you want to slice. The starting location (begin) for the slice is represented as an offset in each dimension of input. In other words, begin[i] is the offset into the 'i'th dimension of input that you want to slice from.
+
+
+### [one_hot_encoding](https://www.tensorflow.org/api_docs/python/tf/contrib/layers/one_hot_encoding)
+```
+tf.contrib.layers.one_hot_encoding(
+    labels,
+    num_classes,
+    on_value=1.0,
+    off_value=0.0,
+    outputs_collections=None,
+    scope=None
+)
+```
+
+Args:
+  *  _labels_: [batch_size] target labels.
+  *  _num_classes_: Total number of classes.
+  *  _on_value_: A scalar defining the on-value.
+  *  _off_value_: A scalar defining the off-value.
+  *  _outputs_collections_: Collection to add the outputs.
+  *  _scope_: Optional scope for name_scope.
