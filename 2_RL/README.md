@@ -158,6 +158,23 @@ Example
 ```
 
 ## Definations
+
+### [tf.shape](https://www.tensorflow.org/api_docs/python/tf/shape)
+```
+tf.shape(
+    input,
+    name=None,
+    out_type=tf.dtypes.int32
+)
+```
+Returns the shape of a tensor.
+
+```
+t = tf.constant([[[1, 1, 1], [2, 2, 2]], [[3, 3, 3], [4, 4, 4]]])
+tf.shape(t)  # [2, 2, 3]
+```
+
+
 ### [tf.slice](https://www.tensorflow.org/api_docs/python/tf/slice)
 Extracts a slice from a tensor.
 ```
@@ -190,3 +207,87 @@ Args:
   *  _off_value_: A scalar defining the off-value.
   *  _outputs_collections_: Collection to add the outputs.
   *  _scope_: Optional scope for name_scope.
+
+### [tf.range](https://www.tensorflow.org/api_docs/python/tf/range)
+```
+tf.range(limit, delta=1, dtype=None, name='range')
+tf.range(start, limit, delta=1, dtype=None, name='range')
+```
+Creates a sequence of numbers that begins at start and extends by increments of delta up to but not including limit.
+
+### [tf.reshape](https://www.tensorflow.org/api_docs/python/tf/reshape)
+```
+tf.reshape(
+    tensor,
+    shape,
+    name=None
+)
+```
+
+Given tensor, this operation returns a tensor that has the same values as _tensor_ with shape _shape_. If one component of shape is the special value -1, the size of that dimension is computed so that the total size remains constant. In particular, a shape of [-1] flattens into 1-D. At most one component of shape can be -1.
+```
+# tensor 't' is [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# tensor 't' has shape [9]
+reshape(t, [3, 3]) ==> [[1, 2, 3],
+                        [4, 5, 6],
+                        [7, 8, 9]]
+```
+
+
+
+### [tf.gather](https://www.tensorflow.org/api_docs/python/tf/gather)
+```
+tf.gather(
+    params,
+    indices,
+    validate_indices=None,
+    name=None,
+    axis=0
+)
+```
+Gather slices from params axis axis according to indices.
+
+indices must be an integer tensor of any dimension (usually 0-D or 1-D). Produces an output tensor with shape params.shape[:axis] + indices.shape + params.shape[axis + 1:] where:
+
+### [tf.reduce_mean](https://www.tensorflow.org/api_docs/python/tf/math/reduce_mean)
+```
+tf.math.reduce_mean(
+    input_tensor,
+    axis=None,
+    keepdims=None,
+    name=None,
+    reduction_indices=None,
+    keep_dims=None
+)
+```
+Computes the mean of elements across dimensions of a tensor.
+
+Reduces input_tensor along the dimensions given in axis. Unless keepdims is true, the rank of the tensor is reduced by 1 for each entry in axis. If keepdims is true, the reduced dimensions are retained with length 1.
+
+If axis is None, all dimensions are reduced, and a tensor with a single element is returned.
+```
+x = tf.constant([[1., 1.], [2., 2.]])
+tf.reduce_mean(x)  # 1.5
+tf.reduce_mean(x, 0)  # [1.5, 1.5]
+tf.reduce_mean(x, 1)  # [1.,  2.]
+```
+
+### [tf.gradients](https://www.tensorflow.org/api_docs/python/tf/gradients)
+```
+tf.gradients(
+    ys,
+    xs,
+    grad_ys=None,
+    name='gradients',
+    colocate_gradients_with_ops=False,
+    gate_gradients=False,
+    aggregation_method=None,
+    stop_gradients=None,
+    unconnected_gradients=tf.UnconnectedGradients.NONE
+)
+```
+Constructs symbolic derivatives of sum of ys w.r.t. x in xs.
+
+_ys_ and _xs_ are each a Tensor or a list of tensors. _grad_ys_ is a list of Tensor, holding the gradients received by the _ys_. The list must be the same length as ys.
+
+_stop_gradients_ is a Tensor or a list of tensors to be considered constant with respect to all _xs_. These tensors will not be backpropagated through, as though they had been explicitly disconnected using stop_gradient
