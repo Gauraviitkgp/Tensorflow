@@ -132,7 +132,7 @@ If no graph argument is specified when constructing the session, the default gra
 ```
 Runs operations and evaluates tensors in fetches.
 
-This method runs one "step" of TensorFlow computation, by running the necessary graph fragment to execute every Operation and evaluate every Tensor in fetches, substituting the values in feed_dict for the corresponding input values.
+This method runs one "step" of TensorFlow computation, by running the necessary graph fragment to execute every Operation and evaluate every Tensor in fetches, substituting the values in [feed_dict](https://www.aiworkbox.com/lessons/use-feed_dict-to-feed-values-to-tensorflow-placeholders) for the corresponding input values.
 
 The fetches argument may be a single graph element, or an arbitrarily nested list, tuple, namedtuple, dict, or OrderedDict containing graph elements at its leaves.
 
@@ -157,3 +157,15 @@ Example
    # [10, 20].
 ```
 
+## Definations
+### [tf.slice](https://www.tensorflow.org/api_docs/python/tf/slice)
+Extracts a slice from a tensor.
+```
+tf.slice(
+    input_,
+    begin,
+    size,
+    name=None
+)
+```
+This operation extracts a slice of size _size_ from a tensor input starting at the location specified by _begin_. The slice size is represented as a tensor shape, where size[i] is the number of elements of the 'i'th dimension of input that you want to slice. The starting location (begin) for the slice is represented as an offset in each dimension of input. In other words, begin[i] is the offset into the 'i'th dimension of input that you want to slice from.
