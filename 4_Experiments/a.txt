@@ -1,0 +1,2 @@
+No_EPOCHS:1	Is Uniform:False	Error Bound:5	Is common variance:True
+No_EPOCHS:1	Is Uniform:True	Error Bound:7	Is common variance:False

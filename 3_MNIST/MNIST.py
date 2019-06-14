@@ -47,14 +47,16 @@ model.add(Conv2D(32, kernel_size=(3, 3),
                  input_shape=input_shape)) #Convultional Layer
 model.add(Conv2D(64, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2))) # Reduce dimensionality of the image
+model.add(Flatten())
+#add dense layer with sigmoid act
 # model.add(Dropout(0.25)) #Dropout Probablity
 # common_variance=((b-a)**2)/12 #Common Variance
 common_entropy=(b-a)/sqrt(2*pi*e)
 model.add(keras.layers.GaussianNoise(common_entropy))
-model.add(Flatten())
+
 model.add(Dense(128, activation='relu'))
 # model.add(Dropout(0.5))
-model.add(keras.layers.GaussianNoise(common_entropy))
+# model.add(keras.layers.GaussianNoise(common_entropy))
 model.add(Dense(num_classes, activation='softmax'))
 
 # conv1   = Conv2D(32, kernel_size=(3, 3), activation='relu')(input_shape)
