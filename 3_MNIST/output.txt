@@ -1,4 +1,4 @@
-# Normal
+# Normal Variance 0.05/6 (99% one)
 Using TensorFlow backend.
 x_train shape: (60000, 28, 28, 1)
 60000 train samples
@@ -81,3 +81,51 @@ Epoch 12/12
 60000/60000 [==============================] - 115s 2ms/step - loss: 9.6320e-04 - acc: 0.9998 - val_loss: 0.0404 - val_acc: 0.9913
 Test loss: 0.04043426674142765
 Test accuracy: 0.9913
+
+# Normal(Using same Variance)
+val_loss: 0.0397 - val_acc: 0.9920
+Test loss: 0.03965371322622063
+Test accuracy: 0.992
+
+# Normal(using same entreopy)
+Using TensorFlow backend.
+x_train shape: (60000, 28, 28, 1)
+60000 train samples
+10000 test samples
+WARNING:tensorflow:From /home/yukrav/Tensorflow/venv/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/yukrav/Tensorflow/venv/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Train on 60000 samples, validate on 10000 samples
+Epoch 1/12
+2019-06-13 16:03:05.139437: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3292500000 Hz
+2019-06-13 16:03:05.140031: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x526ebf0 executing computations on platform Host. Devices:
+2019-06-13 16:03:05.140064: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+60000/60000 [==============================] - 114s 2ms/step - loss: 0.1872 - acc: 0.9426 - val_loss: 0.0448 - val_acc: 0.9858
+Epoch 2/12
+60000/60000 [==============================] - 115s 2ms/step - loss: 0.0454 - acc: 0.9861 - val_loss: 0.0376 - val_acc: 0.9871
+Epoch 3/12
+60000/60000 [==============================] - 114s 2ms/step - loss: 0.0284 - acc: 0.9917 - val_loss: 0.0306 - val_acc: 0.9888
+Epoch 4/12
+60000/60000 [==============================] - 113s 2ms/step - loss: 0.0189 - acc: 0.9939 - val_loss: 0.0295 - val_acc: 0.9908
+Epoch 5/12
+60000/60000 [==============================] - 113s 2ms/step - loss: 0.0137 - acc: 0.9956 - val_loss: 0.0299 - val_acc: 0.9904
+Epoch 6/12
+60000/60000 [==============================] - 115s 2ms/step - loss: 0.0091 - acc: 0.9974 - val_loss: 0.0338 - val_acc: 0.9894
+Epoch 7/12
+60000/60000 [==============================] - 131s 2ms/step - loss: 0.0065 - acc: 0.9980 - val_loss: 0.0405 - val_acc: 0.9888
+Epoch 8/12
+60000/60000 [==============================] - 125s 2ms/step - loss: 0.0042 - acc: 0.9987 - val_loss: 0.0317 - val_acc: 0.9914
+Epoch 9/12
+60000/60000 [==============================] - 114s 2ms/step - loss: 0.0030 - acc: 0.9992 - val_loss: 0.0366 - val_acc: 0.9902
+Epoch 10/12
+60000/60000 [==============================] - 123s 2ms/step - loss: 0.0020 - acc: 0.9995 - val_loss: 0.0384 - val_acc: 0.9903
+Epoch 11/12
+60000/60000 [==============================] - 116s 2ms/step - loss: 0.0015 - acc: 0.9996 - val_loss: 0.0363 - val_acc: 0.9903
+Epoch 12/12
+60000/60000 [==============================] - 117s 2ms/step - loss: 5.9419e-04 - acc: 1.0000 - val_loss: 0.0376 - val_acc: 0.9912
+Test loss: 0.037648250004936656
+Test accuracy: 0.9912
+
