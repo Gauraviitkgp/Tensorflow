@@ -1,0 +1,270 @@
+No_EPOCHS:10	Is Uniform:True	Error Bound:0	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.030205189391662134
+Test accuracy:0.9898
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:6	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.033304078187735286
+Test accuracy:0.9896
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:12	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.02822236828247551
+Test accuracy:0.9913
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:18	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03027655738738249
+Test accuracy:0.9896
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:24	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.030821625405398664
+Test accuracy:0.9903
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:30	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.032724072720651746
+Test accuracy:0.9895
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:36	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.029075551948032807
+Test accuracy:0.9908
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:42	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.027829660840117138
+Test accuracy:0.9915
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:48	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.029665445587527938
+Test accuracy:0.9898
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:True	Error Bound:54	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.0307457825448073
+Test accuracy:0.9902
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:0	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.034005444848106706
+Test accuracy:0.9892
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:6	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.02891387266466627
+Test accuracy:0.9904
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:12	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.02914422540947562
+Test accuracy:0.9908
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:18	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03124009630831424
+Test accuracy:0.9901
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:24	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.028763721592281945
+Test accuracy:0.9908
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:30	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.0310740808205097
+Test accuracy:0.9898
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:36	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.0297250290064374
+Test accuracy:0.9895
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:42	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.033084087012382225
+Test accuracy:0.9905
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:48	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.02999118253509514
+Test accuracy:0.9891
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:54	Is common variance:True
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.030071345490892416
+Test accuracy:0.9903
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:0	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03071192143544322
+Test accuracy:0.9903
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:6	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03079515743078664
+Test accuracy:0.9896
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:12	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03201306549868314
+Test accuracy:0.9895
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:18	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03175398507772479
+Test accuracy:0.9892
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:24	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.032098258936905766
+Test accuracy:0.9891
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:30	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.02794464230935555
+Test accuracy:0.991
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:36	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03710367904108716
+Test accuracy:0.9882
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:42	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.030067166659701616
+Test accuracy:0.9897
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:48	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.028936298005201387
+Test accuracy:0.9902
+
+=========================================
+
+No_EPOCHS:10	Is Uniform:False	Error Bound:54	Is common variance:False
+x_train shape:(60000, 28, 28, 1)
+train samples:60000
+test samples:10000
+Test loss:0.03320270042688353
+Test accuracy:0.989
+
+=========================================
+

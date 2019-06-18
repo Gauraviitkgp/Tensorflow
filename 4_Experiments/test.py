@@ -8,6 +8,7 @@ from uniform_noise import UniformNoise
 from keras import backend as K
 from math import pi,e,sqrt
 
+
 class test_code(object):
 
 	def __init__(self, UNIFORM,ERRORB,COMVAR,EPOCHS,FILENAME):
@@ -93,11 +94,14 @@ class test_code(object):
 			optimizer=keras.optimizers.Adadelta(),
 			metrics=['accuracy'])
 
+		
+		tensorboard=keras.callbacks.TensorBoard(log_dir='logs/{}_{}_{}'.format(self.UNIFORM,self.ERRORB,self.COMVAR),update_freq='epoch')
 		model.fit(x_train, y_train,
 			batch_size=batch_size,
 			epochs=self.epochs,
 			verbose=1,
-			validation_data=(x_test, y_test))
+			validation_data=(x_test, y_test),
+			callbacks=[tensorboard])
 		score = model.evaluate(x_test, y_test, verbose=0)
 		self.f.write('Test loss:{}\n'.format(score[0]))
 		self.f.write('Test accuracy:{}\n\n=========================================\n\n'.format(score[1]))
